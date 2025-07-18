@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "standardeyebreaks",
+  "version": "${version}",
+  "name": "StandardEyeBreaks",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/standardeyebreaks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.secondairy.standardeyebreaks.client.StandardeyebreaksDataGenerator"
+    ],
+    "client": [
+      "me.secondairy.standardeyebreaks.client.StandardeyebreaksClient"
+    ],
+    "main": [
+      "me.secondairy.standardeyebreaks.Standardeyebreaks"
+    ]
+  },
+  "mixins": [
+    "standardeyebreaks.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
