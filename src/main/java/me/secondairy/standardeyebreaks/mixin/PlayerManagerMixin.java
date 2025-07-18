@@ -1,13 +1,9 @@
 package me.secondairy.standardeyebreaks.mixin;
 
 import me.secondairy.standardeyebreaks.random.StandardRandomManager;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.EyeOfEnderEntity;
 import net.minecraft.item.Items;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ConnectedClientData;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -34,6 +30,11 @@ public class PlayerManagerMixin {
 
         if (!StandardRandomManager.isInitialized()) {
             StandardRandomManager.init(seed);
+            if (eyeUses != 0) {
+                for (int i = eyeUses; i > 0; i--) {
+                    StandardRandomManager.get().nextInt(5);
+                }
+            }
         } else {
             if (seed != StandardRandomManager.getSeed()) {
                 StandardRandomManager.close();
