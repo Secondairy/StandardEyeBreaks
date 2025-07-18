@@ -10,9 +10,6 @@
   "icon": "assets/standardeyebreaks/icon.png",
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "me.secondairy.standardeyebreaks.client.StandardeyebreaksDataGenerator"
-    ],
     "client": [
       "me.secondairy.standardeyebreaks.client.StandardeyebreaksClient"
     ],
